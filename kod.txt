@@ -1,0 +1,30 @@
+import random
+kurban_listesi=[]
+kurtulanlar=[]
+infaz_edilen=""
+for i in range(6) :
+    sec= input('seçilecek mahkumun ismini oku')
+    print("{}  sahneye çıkarıldı".format(sec))
+    kurban_listesi.append(sec)
+
+silah_patladi=0
+sayac=1 #çünkü sayaç indisi tutmuyor
+r=random.randint(1,6)
+print("ss subayı silahını çıkardı ve rus ruleti için hazırladı")
+kl=len(kurban_listesi)
+while silah_patladi==False:
+    if sayac==r:
+        su_anki_ihtimal= (1 / kl ) * (kl / 6)
+        print("{}/ {}* {}/ {}*{}/ {}".format(sayac,kl,kl,6,1,sayac))
+        print("booomm ........ {}. kişi mefta" .format(sayac))
+        print("su anki ihtimal {}".format(su_anki_ihtimal))
+        silah_patladi = True
+        infaz_edilen=kurban_listesi[sayac-1]
+    else:
+        print("Tık {}. kişi kurtuldu sıra {}. kişide".format(sayac, sayac + 1))
+        su_anki_ihtimal = (1 / kl) * (kl / 6)
+        print("{}/ {}* {}/ {}*{}/ {}".format(sayac,kl,kl,6,1,sayac))
+        print("su anki ihtimal {}".format(su_anki_ihtimal))
+        kurtulanlar.append(kurban_listesi[sayac-1])
+        sayac = sayac + 1
+        kl=kl-1
