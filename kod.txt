@@ -28,3 +28,20 @@ while silah_patladi==False:
         kurtulanlar.append(kurban_listesi[sayac-1])
         sayac = sayac + 1
         kl=kl-1
+
+
+------
+import random
+def faktoriyel(rand=random.randint(1,6),sira=6,sayac=1):
+
+    if rand==sira:
+        print("boom {}." .format(sayac))
+        return
+    else:
+        print("tik  {}. kişi ölmedi sıra {} ".format(sayac,sayac+1) )
+       #print("{}/{}*{}/{}*{}/{}".format(sayac,kl,kl,6,1,sayac))
+	    print("{}/{}*{}/{}*{}/{}".format(sayac,sira,sira,6,1,sayac))
+        hesap=sayac/sira*sira/6*1/sayac
+        print('ihtimal : {}'.format(hesap))
+        return faktoriyel(rand,sira-1,sayac+1)
+faktoriyel()
